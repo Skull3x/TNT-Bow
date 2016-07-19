@@ -1,0 +1,7 @@
+name: Arrow tnt
+main: arrowtnt\Main
+version: 0.1
+author: Pogogo007
+api:
+- 1.13.0
+- 2.0.0
