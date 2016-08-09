@@ -18,8 +18,7 @@ Class Main extends PluginBase implements Listener
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
     }
 
-    Public function onHit(ProjectileHitEvent $event)
-    {
+    Public function onHit(ProjectileHitEvent $event){
         $arrow = $event->getEntity();
         if ($arrow instanceof Arrow) {
             $x = $arrow->getX();
@@ -27,6 +26,8 @@ Class Main extends PluginBase implements Listener
             $z = $arrow->getZ();
             $level = $arrow->getLevel();
             $chunk = $level->getChunk(round($x) >> 4, round($z) >> 4);
+            /*$fuel = $player->getInventory()->getItem(Item::get(46, 0, 1));
+            if($player->getInventory()->getContents()->getItem()->getId() == 46){*/
             $tnt = Entity::createEntity("PrimedTNT", $chunk, new CompoundTag("", [
                 "Pos" => new ListTag("Pos", [
                     new DoubleTag("", $x),
