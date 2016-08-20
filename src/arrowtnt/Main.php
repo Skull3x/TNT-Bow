@@ -11,6 +11,7 @@ use pocketmine\nbt\tag\DoubleTag;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\ListTag;
 use pocketmine\plugin\PluginBase;
+use pocketmine\entity\PrimedTNT;
 
 class Main extends PluginBase implements Listener{
     
@@ -20,7 +21,7 @@ class Main extends PluginBase implements Listener{
 
     public function onHit(ProjectileHitEvent $event){
         $arrow = $event->getEntity();
-        $player = $event->getEntity()->shootingEntity();
+        $player = $event->shootingEntity();
         if ($arrow instanceof Arrow) {
             $x = $arrow->getX();
             $y = $arrow->getY();
