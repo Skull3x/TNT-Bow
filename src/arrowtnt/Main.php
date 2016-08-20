@@ -20,6 +20,7 @@ class Main extends PluginBase implements Listener{
 
     public function onHit(ProjectileHitEvent $event){
         $arrow = $event->getEntity();
+        $player = $event->getEntity()->shootingEntity();
         if ($arrow instanceof Arrow) {
             $x = $arrow->getX();
             $y = $arrow->getY();
