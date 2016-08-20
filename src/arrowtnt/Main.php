@@ -28,7 +28,7 @@ class Main extends PluginBase implements Listener{
             $level = $arrow->getLevel();
             $chunk = $level->getChunk(round($x) >> 4, round($z) >> 4);
             if ($player->hasPermission("tnt.bow.use")){
-                if ($player->getInventory()->getContents() as $item){
+                foreach($player->getInventory()->getContents() as $item){
                     if ($item->getId() == 46){
                         $player->getInventory()->removeItem(Item::get(46, 0, 1));
                         $tnt = Entity::createEntity("PrimedTNT", $chunk, new CompoundTag("", [
