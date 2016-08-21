@@ -50,6 +50,7 @@ class Main extends PluginBase implements Listener{
                                         ])     //WHOLE COMPOUND TAG
                                         );//create entity
                                         $tnt->spawnToAll();
+                                        $arrow->kill();
                     }
                 }
             }
